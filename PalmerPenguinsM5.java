@@ -1,12 +1,12 @@
 // PalmerPenguinsM5.java
-// 
-// 
-// Reads the CSV file and parses the data into arrays
+// Author: Tamieka Reid 
+// Submission Date : 10/04/2026
+// Reads the CSV file and parses the data into ar
 
 import java.io.*;
 import java.util.*;
 
-public class PalmerPenguinsM5 {
+public class PalmerPenguinM5 {
 
     static final String FILE_NAME =  "PalmerPenguins.csv";
     
@@ -28,27 +28,27 @@ public class PalmerPenguinsM5 {
         //        results of calling CSVReader.readFile to read column 1
         //        from the data file. Replace the ellipsis (...) with the 
         //        array declaration.
-        ... = CSVReader.readFile(FILE_NAME, 1);
+        String [] speciesData= CSVReader.readFile(FILE_NAME, 1);
         
         // store the counts of each species in this array
         // TODO 2 Declare an int array named speciesCount 
         //        with a size declarator of NUM_SPECIES.
-        
+        int[] speciesCount = new int[NUM_SPECIES];
 
         // exit if no data was found
         // TODO 3 encode an if statement to determine if the 
         //        length of the speciesData array is 0
-
+        if (speciesData.length== 0) {
             System.out.println("Error: The file is empty or could not be read.");
-            return;
-        }
+                return;
+            }
 
         // loop through the data and count the species
         // TODO 4 encode an enhanced for loop (also known as a foreach loop
         //        which iterates through the speciesData array using a loop
         //        variable named species of type String. Replace the 
         //        ellipsis (...) with the for loop header
-        ... {
+        for (String species : speciesData) {
             if (species.equals(SP_CHINSTRAP)) {
                 speciesCount[SP_CHINSTRAP_INDEX]++;
             } else if (species.equals(SP_GENTOO)) {
@@ -62,7 +62,9 @@ public class PalmerPenguinsM5 {
         // TODO 5 print the value of each speciesCount array element
         //        using the index constants. Use three separate
         //        System.out.println statements.
-
+        System.out.println(SP_CHINSTRAP + " count = " + speciesCount[SP_CHINSTRAP_INDEX]);
+        System.out.println(SP_GENTOO + " count = " + speciesCount[SP_GENTOO_INDEX]);
+        System.out.Println(SP_ADELIE + " count = " + speciesCount[SP_ADELIE_INDEX]);
 
     }
 }
